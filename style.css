@@ -1,23 +1,40 @@
 
-/* =====================================
+/* =====================================================
    ASAPH ENERGY SOLUTIONS
    COMPLETE WEBSITE STYLESHEET
-===================================== */
+   PROFESSIONAL DESIGN - VERSION 3.0
+===================================================== */
+
+
+/* =====================================================
+   1. DESIGN VARIABLES
+===================================================== */
 
 :root {
     --navy: #0b1f3a;
-    --dark-navy: #07162b;
-    --blue: #1264a3;
-    --light-blue: #eaf4fc;
-    --yellow: #f5bd32;
+    --navy-dark: #06152a;
+    --navy-light: #15395f;
+    --blue: #1474b8;
+    --blue-dark: #105b91;
+    --blue-light: #eaf5fd;
+    --yellow: #f4bd32;
+    --green: #20965b;
     --white: #ffffff;
-    --light-grey: #f5f7fa;
+    --off-white: #f8fafc;
+    --light-grey: #f1f4f8;
     --grey: #687587;
     --dark: #172536;
-    --border: #e1e7ee;
-    --shadow: 0 12px 35px rgba(11,31,58,.09);
-    --radius: 12px;
+    --border: #e2e8f0;
+    --shadow: 0 10px 35px rgba(11, 31, 58, 0.09);
+    --shadow-hover: 0 18px 45px rgba(11, 31, 58, 0.15);
+    --radius: 14px;
+    --transition: 0.3s ease;
 }
+
+
+/* =====================================================
+   2. RESET AND GLOBAL STYLES
+===================================================== */
 
 * {
     margin: 0;
@@ -27,13 +44,15 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--white);
-    color: var(--dark);
+    font-size: 16px;
     line-height: 1.7;
+    color: var(--dark);
+    background: var(--white);
     overflow-x: hidden;
 }
 
@@ -43,38 +62,57 @@ img {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
-button, input, textarea, select {
-    font: inherit;
+button,
+input,
+textarea,
+select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
-    padding: 80px 5%;
+    position: relative;
 }
 
-/* HEADER */
+
+/* =====================================================
+   3. WEBSITE HEADER
+===================================================== */
 
 .header {
-    min-height: 82px;
+    width: 100%;
+    min-height: 85px;
     padding: 15px 5%;
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 25px;
-    background: var(--white);
     position: relative;
     z-index: 100;
-    box-shadow: 0 2px 15px rgba(0,0,0,.05);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
+    display: inline-block;
+    color: var(--navy);
     font-size: 25px;
     font-weight: 900;
     letter-spacing: 1px;
-    color: var(--navy);
     white-space: nowrap;
 }
 
@@ -82,19 +120,24 @@ section {
     color: var(--blue);
 }
 
+
+/* =====================================================
+   4. NAVIGATION
+===================================================== */
+
 .nav-links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 23px;
 }
 
 .nav-links a {
-    font-size: 14px;
-    font-weight: 600;
     color: var(--navy);
-    transition: color .3s;
+    font-size: 14px;
+    font-weight: 700;
+    transition: var(--transition);
 }
 
 .nav-links a:hover,
@@ -102,20 +145,27 @@ section {
     color: var(--blue);
 }
 
-/* BUTTONS */
+.nav-links .btn {
+    color: var(--white);
+}
+
+
+/* =====================================================
+   5. BUTTONS
+===================================================== */
 
 .btn {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 8px;
     padding: 13px 25px;
     border: 2px solid transparent;
-    border-radius: 6px;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: 700;
     text-align: center;
-    cursor: pointer;
-    transition: all .3s;
+    transition: var(--transition);
 }
 
 .btn-primary {
@@ -127,102 +177,139 @@ section {
 .btn-primary:hover {
     background: var(--navy);
     border-color: var(--navy);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .btn-secondary {
     background: var(--yellow);
-    color: var(--navy);
+    color: var(--navy) !important;
     border-color: var(--yellow);
 }
 
 .btn-secondary:hover {
     background: #e6aa19;
-    transform: translateY(-2px);
+    border-color: #e6aa19;
+    transform: translateY(-3px);
 }
 
-/* HOMEPAGE HERO */
+.btn-outline {
+    background: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+
+/* =====================================================
+   6. HOMEPAGE HERO SECTION
+===================================================== */
 
 .hero {
-    min-height: 620px;
+    min-height: 650px;
     padding: 110px 7%;
     display: flex;
     align-items: center;
     color: var(--white);
+
     background:
-        linear-gradient(90deg, rgba(5,20,39,.88), rgba(5,20,39,.4)),
-        url("images/solar-hero.jpg") center/cover no-repeat;
+        linear-gradient(
+            90deg,
+            rgba(5, 20, 39, 0.92),
+            rgba(5, 20, 39, 0.48)
+        ),
+        url("images/solar-hero.jpg") center / cover no-repeat;
 }
 
 .hero-content {
-    max-width: 720px;
+    width: 100%;
+    max-width: 760px;
 }
 
 .hero h1 {
-    font-size: clamp(38px,5.5vw,65px);
-    line-height: 1.12;
-    margin-bottom: 25px;
+    max-width: 750px;
+    font-size: clamp(38px, 5.5vw, 66px);
     font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
 }
 
 .hero-subtitle {
+    max-width: 650px;
     font-size: 18px;
-    margin-bottom: 20px;
-    color: rgba(255,255,255,.9);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 28px;
 }
 
-.hero-content > p:not(.hero-subtitle) {
-    font-size: 17px;
-    margin-bottom: 28px;
+.hero-content p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-/* INNER PAGE HERO */
+
+/* =====================================================
+   7. INNER PAGE HERO
+===================================================== */
 
 .page-hero {
-    min-height: 260px;
-    padding: 75px 5%;
+    min-height: 280px;
+    padding: 75px 6%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
-    background: linear-gradient(120deg,var(--dark-navy),var(--blue));
+
+    background: linear-gradient(
+        120deg,
+        var(--navy-dark),
+        var(--blue)
+    );
 }
 
 .page-hero-content {
-    max-width: 800px;
+    max-width: 850px;
 }
 
 .page-hero h1 {
-    font-size: clamp(34px,5vw,50px);
-    margin-bottom: 12px;
+    font-size: clamp(34px, 5vw, 52px);
     line-height: 1.2;
+    margin-bottom: 15px;
 }
 
 .page-hero p {
     font-size: 17px;
-    color: rgba(255,255,255,.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* SECTION HEADINGS */
+
+/* =====================================================
+   8. SECTION HEADINGS
+===================================================== */
 
 .section-heading {
-    max-width: 750px;
+    max-width: 760px;
     margin: 0 auto 45px;
     text-align: center;
 }
 
 .section-heading h2 {
     color: var(--navy);
-    font-size: clamp(28px,4vw,40px);
+    font-size: clamp(28px, 4vw, 41px);
     line-height: 1.25;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .section-heading p {
@@ -230,16 +317,20 @@ section {
     font-size: 16px;
 }
 
-/* ABOUT */
+
+/* =====================================================
+   9. ABOUT SECTION
+===================================================== */
 
 .about-section {
-    padding: 85px 7%;
+    padding: 90px 7%;
     background: var(--white);
 }
 
 .about-section h2 {
     color: var(--navy);
-    font-size: 34px;
+    font-size: 35px;
+    line-height: 1.3;
     margin-bottom: 20px;
 }
 
@@ -250,7 +341,8 @@ section {
 
 .about-content {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -259,7 +351,7 @@ section {
 
 .about-image img {
     width: 100%;
-    height: 430px;
+    height: 440px;
     object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -269,9 +361,14 @@ section {
     padding: 10px 0;
 }
 
+
+/* =====================================================
+   10. MISSION AND VISION
+===================================================== */
+
 .mission-vision {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin-top: 50px;
 }
@@ -281,28 +378,33 @@ section {
     padding: 30px;
     background: var(--light-grey);
     border-radius: var(--radius);
-    border-left: 4px solid var(--yellow);
+    border-left: 5px solid var(--yellow);
 }
 
 .mission-card h3,
 .vision-card h3 {
     color: var(--navy);
-    margin-bottom: 12px;
     font-size: 21px;
+    margin-bottom: 12px;
 }
 
-/* PRODUCTS */
+
+/* =====================================================
+   11. PRODUCTS SECTION
+===================================================== */
 
 .products-section {
-    padding: 85px 5%;
-    background: var(--light-grey);
+    padding: 90px 5%;
+    background: var(--off-white);
 }
 
 .product-grid {
+    width: 100%;
     max-width: 1250px;
-    margin: auto;
+    margin: 0 auto;
+
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
 }
 
@@ -311,24 +413,26 @@ section {
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: transform .3s, box-shadow .3s;
+    border: 1px solid var(--border);
+    transition: var(--transition);
 }
 
 .product-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 18px 40px rgba(11,31,58,.14);
+    box-shadow: var(--shadow-hover);
 }
 
 .product-card img {
     width: 100%;
-    height: 240px;
+    height: 245px;
     object-fit: cover;
-    background: var(--light-blue);
+    background: var(--blue-light);
 }
 
 .product-card h3 {
     color: var(--navy);
     font-size: 21px;
+    line-height: 1.35;
     margin: 22px 22px 10px;
 }
 
@@ -342,18 +446,23 @@ section {
     margin: 0 22px 25px;
 }
 
-/* PROJECTS */
+
+/* =====================================================
+   12. PROJECTS SECTION
+===================================================== */
 
 .projects-section {
-    padding: 85px 5%;
+    padding: 90px 5%;
     background: var(--white);
 }
 
 .project-grid {
+    width: 100%;
     max-width: 1250px;
-    margin: auto;
+    margin: 0 auto;
+
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
 }
 
@@ -362,18 +471,20 @@ section {
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: transform .3s;
+    border: 1px solid var(--border);
+    transition: var(--transition);
 }
 
 .project-card:hover {
     transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
 }
 
 .project-card img {
     width: 100%;
-    height: 250px;
+    height: 255px;
     object-fit: cover;
-    background: var(--light-blue);
+    background: var(--blue-light);
 }
 
 .project-card h3 {
@@ -388,13 +499,19 @@ section {
     margin: 0 22px 25px;
 }
 
-/* CONTACT */
+
+/* =====================================================
+   13. CONTACT PAGE
+===================================================== */
 
 .contact-section {
-    padding: 85px 7%;
+    padding: 90px 7%;
+
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
     gap: 60px;
+
     background: var(--white);
 }
 
@@ -425,13 +542,21 @@ section {
     color: var(--grey);
 }
 
-.contact-form-container {
-    padding: 35px;
-    background: var(--light-grey);
-    border-radius: var(--radius);
+.contact-item a:hover {
+    color: var(--blue);
 }
 
-/* FORMS */
+.contact-form-container {
+    padding: 38px;
+    background: var(--light-grey);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* =====================================================
+   14. FORM STYLING
+===================================================== */
 
 .form-group {
     margin-bottom: 22px;
@@ -448,22 +573,26 @@ section {
 .form-group input,
 .form-group textarea,
 .form-group select {
+    display: block;
     width: 100%;
     padding: 14px 15px;
+
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 7px;
+
     outline: none;
     color: var(--dark);
     font-size: 15px;
-    transition: border-color .3s, box-shadow .3s;
+
+    transition: var(--transition);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(18,100,163,.12);
+    box-shadow: 0 0 0 3px rgba(20, 116, 184, 0.12);
 }
 
 .form-group textarea {
@@ -475,12 +604,16 @@ form .btn {
     min-width: 180px;
 }
 
-/* QUOTE */
+
+/* =====================================================
+   15. QUOTATION PAGE
+===================================================== */
 
 .quote-section {
-    max-width: 900px;
-    margin: auto;
-    padding: 85px 7%;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 90px 7%;
 }
 
 .quote-intro {
@@ -490,7 +623,7 @@ form .btn {
 
 .quote-intro h2 {
     color: var(--navy);
-    font-size: 32px;
+    font-size: 33px;
     margin-bottom: 15px;
 }
 
@@ -499,46 +632,61 @@ form .btn {
 }
 
 .quote-section form {
-    padding: 35px;
+    padding: 38px;
     background: var(--light-grey);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
 
-/* CALL TO ACTION */
+
+/* =====================================================
+   16. CALL TO ACTION
+===================================================== */
 
 .cta-section {
-    padding: 75px 7%;
-    background: linear-gradient(120deg,var(--navy),var(--blue));
+    padding: 80px 7%;
+    background: linear-gradient(
+        120deg,
+        var(--navy-dark),
+        var(--blue)
+    );
+
     color: var(--white);
     text-align: center;
 }
 
 .cta-section h2 {
-    font-size: clamp(27px,4vw,38px);
+    font-size: clamp(27px, 4vw, 40px);
+    line-height: 1.25;
     margin-bottom: 15px;
 }
 
 .cta-section p {
-    max-width: 650px;
+    max-width: 680px;
     margin: 0 auto 28px;
-    color: rgba(255,255,255,.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* FOOTER */
+
+/* =====================================================
+   17. WEBSITE FOOTER
+===================================================== */
 
 .footer {
-    padding: 65px 7% 20px;
-    background: var(--dark-navy);
+    padding: 70px 7% 22px;
+    background: var(--navy-dark);
     color: var(--white);
 }
 
 .footer-content {
+    width: 100%;
     max-width: 1250px;
-    margin: auto;
+    margin: 0 auto;
+
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 55px;
+
     padding-bottom: 45px;
 }
 
@@ -548,9 +696,13 @@ form .btn {
     margin-bottom: 18px;
 }
 
+.footer .logo span {
+    color: var(--yellow);
+}
+
 .footer-brand p {
     max-width: 350px;
-    color: #b9c6d6;
+    color: #bdc9d8;
     font-size: 14px;
 }
 
@@ -570,31 +722,40 @@ form .btn {
 .footer-links a {
     color: #c7d1df;
     font-size: 14px;
-    transition: color .3s;
+    transition: var(--transition);
 }
 
 .footer-links a:hover {
     color: var(--yellow);
+    padding-left: 4px;
 }
 
 .footer-bottom {
+    width: 100%;
     max-width: 1250px;
-    margin: auto;
+    margin: 0 auto;
     padding-top: 22px;
-    border-top: 1px solid rgba(255,255,255,.15);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
     text-align: center;
     color: #aebdce;
     font-size: 13px;
 }
 
-/* 404 PAGE */
+
+/* =====================================================
+   18. 404 ERROR PAGE
+===================================================== */
 
 .error-page {
     min-height: 65vh;
     padding: 80px 5%;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     text-align: center;
     background: var(--light-grey);
 }
@@ -604,7 +765,7 @@ form .btn {
 }
 
 .error-content h1 {
-    font-size: clamp(90px,15vw,150px);
+    font-size: clamp(90px, 15vw, 150px);
     line-height: 1;
     color: var(--blue);
     font-weight: 900;
@@ -621,7 +782,14 @@ form .btn {
     margin-bottom: 28px;
 }
 
-/* SMALL DETAILS */
+
+/* =====================================================
+   19. GENERAL WEBSITE DETAILS
+===================================================== */
+
+main {
+    min-height: 60vh;
+}
 
 .section-action {
     text-align: center;
@@ -638,9 +806,13 @@ form .btn {
     color: var(--white);
 }
 
-/* TABLET */
+
+/* =====================================================
+   20. TABLET RESPONSIVENESS
+===================================================== */
 
 @media (max-width: 1000px) {
+
     .header {
         flex-wrap: wrap;
     }
@@ -648,27 +820,41 @@ form .btn {
     .nav-links {
         width: 100%;
         justify-content: center;
+        gap: 15px 20px;
     }
 
     .product-grid,
     .project-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-content {
+        gap: 30px;
     }
 
     .contact-section {
         gap: 35px;
     }
+
+    .footer-content {
+        gap: 30px;
+    }
+
 }
 
-/* MOBILE */
+
+/* =====================================================
+   21. MOBILE RESPONSIVENESS
+===================================================== */
 
 @media (max-width: 650px) {
+
     section {
         padding: 60px 6%;
     }
 
     .header {
-        padding: 16px 6%;
+        padding: 17px 6%;
         gap: 15px;
     }
 
@@ -678,7 +864,7 @@ form .btn {
 
     .nav-links {
         justify-content: flex-start;
-        gap: 12px 18px;
+        gap: 12px 17px;
     }
 
     .nav-links a {
@@ -692,10 +878,12 @@ form .btn {
     .hero {
         min-height: 540px;
         padding: 85px 7%;
+        background-position: center;
     }
 
     .hero h1 {
         font-size: 39px;
+        letter-spacing: -0.5px;
     }
 
     .hero-subtitle {
@@ -703,8 +891,8 @@ form .btn {
     }
 
     .hero-buttons {
-        flex-direction: column;
         align-items: stretch;
+        flex-direction: column;
     }
 
     .hero-buttons .btn {
@@ -720,10 +908,16 @@ form .btn {
         font-size: 34px;
     }
 
-    .product-grid,
-    .project-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
+    .page-hero p {
+        font-size: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .about-section h2 {
+        font-size: 29px;
     }
 
     .about-content {
@@ -739,6 +933,17 @@ form .btn {
         grid-template-columns: 1fr;
     }
 
+    .product-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
+
+    .product-card img,
+    .project-card img {
+        height: 230px;
+    }
+
     .contact-section {
         grid-template-columns: 1fr;
         padding: 60px 6%;
@@ -747,6 +952,11 @@ form .btn {
     .contact-form-container,
     .quote-section form {
         padding: 23px;
+    }
+
+    .contact-info h2,
+    .contact-form-container h2 {
+        font-size: 27px;
     }
 
     .quote-section {
@@ -773,11 +983,16 @@ form .btn {
     .error-content h2 {
         font-size: 25px;
     }
+
 }
 
-/* REDUCED MOTION */
+
+/* =====================================================
+   22. ACCESSIBILITY AND REDUCED MOTION
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
@@ -785,8 +1000,14 @@ form .btn {
     *,
     *::before,
     *::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+
 }
+
+
+/* =====================================================
+   END OF ASAPH ENERGY SOLUTIONS STYLESHEET
+===================================================== */

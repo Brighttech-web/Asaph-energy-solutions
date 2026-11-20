@@ -1,7 +1,710 @@
 
+/* =====================================
+   ASAPH ENERGY SOLUTIONS
+   COMPLETE WEBSITE STYLESHEET
+===================================== */
+
+:root {
+    --navy: #0b1f3a;
+    --dark-navy: #07162b;
+    --blue: #1264a3;
+    --light-blue: #eaf4fc;
+    --yellow: #f5bd32;
+    --white: #ffffff;
+    --light-grey: #f5f7fa;
+    --grey: #687587;
+    --dark: #172536;
+    --border: #e1e7ee;
+    --shadow: 0 12px 35px rgba(11,31,58,.09);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+section {
+    padding: 80px 5%;
+}
+
+/* HEADER */
+
+.header {
+    min-height: 82px;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--white);
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0,0,0,.05);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: var(--navy);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: color .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--blue);
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 25px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: var(--white) !important;
+    border-color: var(--blue);
+}
+
+.btn-primary:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--yellow);
+    color: var(--navy);
+    border-color: var(--yellow);
+}
+
+.btn-secondary:hover {
+    background: #e6aa19;
+    transform: translateY(-2px);
+}
+
+/* HOMEPAGE HERO */
+
+.hero {
+    min-height: 620px;
+    padding: 110px 7%;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background:
+        linear-gradient(90deg, rgba(5,20,39,.88), rgba(5,20,39,.4)),
+        url("images/solar-hero.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: clamp(38px,5.5vw,65px);
+    line-height: 1.12;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,.9);
+}
+
+.hero-content > p:not(.hero-subtitle) {
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* INNER PAGE HERO */
+
+.page-hero {
+    min-height: 260px;
+    padding: 75px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(120deg,var(--dark-navy),var(--blue));
+}
+
+.page-hero-content {
+    max-width: 800px;
+}
+
+.page-hero h1 {
+    font-size: clamp(34px,5vw,50px);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.page-hero p {
+    font-size: 17px;
+    color: rgba(255,255,255,.9);
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: clamp(28px,4vw,40px);
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--grey);
+    font-size: 16px;
+}
+
+/* ABOUT */
+
+.about-section {
+    padding: 85px 7%;
+    background: var(--white);
+}
+
+.about-section h2 {
+    color: var(--navy);
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: var(--grey);
+    margin-bottom: 18px;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.about-text {
+    padding: 10px 0;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.mission-card,
+.vision-card {
+    padding: 30px;
+    background: var(--light-grey);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--yellow);
+}
+
+.mission-card h3,
+.vision-card h3 {
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+/* PRODUCTS */
+
+.products-section {
+    padding: 85px 5%;
+    background: var(--light-grey);
+}
+
+.product-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(11,31,58,.14);
+}
+
+.product-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: var(--light-blue);
+}
+
+.product-card h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin: 22px 22px 10px;
+}
+
+.product-card p {
+    color: var(--grey);
+    font-size: 15px;
+    margin: 0 22px 22px;
+}
+
+.product-card .btn {
+    margin: 0 22px 25px;
+}
+
+/* PROJECTS */
+
+.projects-section {
+    padding: 85px 5%;
+    background: var(--white);
+}
+
+.project-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: var(--light-blue);
+}
+
+.project-card h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin: 22px 22px 10px;
+}
+
+.project-card p {
+    color: var(--grey);
+    font-size: 15px;
+    margin: 0 22px 25px;
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding: 85px 7%;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 60px;
+    background: var(--white);
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    font-size: 30px;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    color: var(--grey);
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    margin-bottom: 28px;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 7px;
+}
+
+.contact-item p,
+.contact-item a {
+    color: var(--grey);
+}
+
+.contact-form-container {
+    padding: 35px;
+    background: var(--light-grey);
+    border-radius: var(--radius);
+}
+
+/* FORMS */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 15px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    color: var(--dark);
+    font-size: 15px;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(18,100,163,.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+form .btn {
+    min-width: 180px;
+}
+
+/* QUOTE */
+
+.quote-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 85px 7%;
+}
+
+.quote-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.quote-intro h2 {
+    color: var(--navy);
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.quote-intro p {
+    color: var(--grey);
+}
+
+.quote-section form {
+    padding: 35px;
+    background: var(--light-grey);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* CALL TO ACTION */
+
+.cta-section {
+    padding: 75px 7%;
+    background: linear-gradient(120deg,var(--navy),var(--blue));
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: clamp(27px,4vw,38px);
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: rgba(255,255,255,.9);
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 65px 7% 20px;
+    background: var(--dark-navy);
+    color: var(--white);
+}
+
+.footer-content {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 55px;
+    padding-bottom: 45px;
+}
+
+.footer .logo {
+    color: var(--white);
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.footer-brand p {
+    max-width: 350px;
+    color: #b9c6d6;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footer-links h3 {
+    color: var(--yellow);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #c7d1df;
+    font-size: 14px;
+    transition: color .3s;
+}
+
+.footer-links a:hover {
+    color: var(--yellow);
+}
+
+.footer-bottom {
+    max-width: 1250px;
+    margin: auto;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    text-align: center;
+    color: #aebdce;
+    font-size: 13px;
+}
+
+/* 404 PAGE */
+
+.error-page {
+    min-height: 65vh;
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--light-grey);
+}
+
+.error-content {
+    max-width: 650px;
+}
+
+.error-content h1 {
+    font-size: clamp(90px,15vw,150px);
+    line-height: 1;
+    color: var(--blue);
+    font-weight: 900;
+}
+
+.error-content h2 {
+    font-size: 30px;
+    color: var(--navy);
+    margin: 20px 0 12px;
+}
+
+.error-content p {
+    color: var(--grey);
+    margin-bottom: 28px;
+}
+
+/* SMALL DETAILS */
+
+.section-action {
+    text-align: center;
+    margin-top: 35px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--blue);
+    color: var(--white);
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .product-grid,
+    .project-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact-section {
+        gap: 35px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    section {
+        padding: 60px 6%;
+    }
+
+    .header {
+        padding: 16px 6%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-links .btn {
+        padding: 9px 13px;
+    }
+
+    .hero {
+        min-height: 540px;
+        padding: 85px 7%;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
     .hero-buttons {
-        align-items: stretch;
         flex-direction: column;
+        align-items: stretch;
     }
 
     .hero-buttons .btn {
@@ -17,20 +720,10 @@
         font-size: 34px;
     }
 
-    .section-heading h2,
-    .about-section h2 {
-        font-size: 28px;
-    }
-
     .product-grid,
     .project-grid {
         grid-template-columns: 1fr;
         gap: 22px;
-    }
-
-    .product-card img,
-    .project-card img {
-        height: 230px;
     }
 
     .about-content {
@@ -80,25 +773,9 @@
     .error-content h2 {
         font-size: 25px;
     }
-
-    .btn {
-        max-width: 100%;
-    }
-
 }
 
-
-/* 18. ACCESSIBILITY AND FINAL DETAILS */
-
-:focus-visible {
-    outline: 3px solid var(--yellow);
-    outline-offset: 3px;
-}
-
-::selection {
-    background: var(--blue);
-    color: var(--white);
-}
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -108,8 +785,8 @@
     *,
     *::before,
     *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
     }
 }

@@ -1,612 +1,31 @@
 
-/* =========================================
-   ASAPH ENERGY SOLUTIONS
-   COMPLETE WEBSITE STYLESHEET
-========================================= */
-
-
-/* 1. GLOBAL SETTINGS */
-
-:root {
-    --navy: #071d35;
-    --navy-light: #102f50;
-    --blue: #0878d1;
-    --blue-light: #eaf5ff;
-    --yellow: #ffc928;
-    --white: #ffffff;
-    --light: #f5f8fc;
-    --dark: #172b40;
-    --grey: #68798b;
-    --border: #e2e9f0;
-    --shadow: 0 12px 35px rgba(7, 29, 53, 0.09);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--white);
-    color: var(--dark);
-    line-height: 1.7;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-section {
-    padding: 80px 7%;
-}
-
-
-/* 2. HEADER AND NAVIGATION */
-
-.header {
-    width: 100%;
-    min-height: 82px;
-    padding: 18px 7%;
-    background: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    position: relative;
-    z-index: 10;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    color: var(--navy);
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-.logo span {
-    color: var(--blue);
-}
-
-.header nav,
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.header nav a,
-.nav-links a {
-    color: var(--navy);
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.header nav a:hover,
-.nav-links a:hover {
-    color: var(--blue);
-}
-
-
-/* 3. BUTTONS */
-
-.btn {
-    display: inline-block;
-    padding: 13px 25px;
-    border-radius: 6px;
-    font-weight: 700;
-    text-align: center;
-    transition: 0.3s;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-.btn-primary {
-    background: var(--blue);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    background: var(--navy);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: var(--yellow);
-    color: var(--navy);
-}
-
-.btn-secondary:hover {
-    background: #f0b900;
-    transform: translateY(-2px);
-}
-
-
-/* 4. HOMEPAGE HERO */
-
-.hero {
-    min-height: 570px;
-    padding: 100px 7%;
-    display: flex;
-    align-items: center;
-    background:
-        linear-gradient(90deg, rgba(7,29,53,0.94), rgba(7,29,53,0.48)),
-        url("images/solar-hero.jpg") center/cover no-repeat;
-    color: var(--white);
-}
-
-.hero-content {
-    max-width: 680px;
-}
-
-.hero h1 {
-    font-size: clamp(36px, 5vw, 62px);
-    line-height: 1.15;
-    margin: 15px 0 22px;
-}
-
-.hero p {
-    font-size: 17px;
-    max-width: 580px;
-    margin-bottom: 28px;
-    color: #e4edf6;
-}
-
-.hero .btn {
-    margin: 5px 10px 5px 0;
-}
-
-
-/* 5. PAGE HERO */
-
-.page-hero {
-    padding: 85px 7%;
-    text-align: center;
-    background: linear-gradient(120deg, var(--navy), var(--navy-light));
-    color: var(--white);
-}
-
-.page-hero h1 {
-    font-size: clamp(32px, 4vw, 48px);
-    margin-bottom: 12px;
-}
-
-.page-hero p {
-    max-width: 700px;
-    margin: auto;
-    color: #dce8f3;
-}
-
-
-/* 6. GENERAL HEADINGS */
-
-h2 {
-    color: var(--navy);
-    font-size: clamp(26px, 3vw, 36px);
-    line-height: 1.3;
-    margin-bottom: 18px;
-}
-
-h3 {
-    color: var(--navy);
-    margin-bottom: 10px;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 45px;
-}
-
-.section-heading p {
-    color: var(--grey);
-}
-
-
-/* 7. INTRODUCTION */
-
-.intro-section {
-    background: var(--white);
-}
-
-.intro-section p {
-    color: var(--grey);
-    max-width: 850px;
-}
-
-
-/* 8. PRODUCT LAYOUT */
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.product-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-7px);
-}
-
-.product-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: var(--light);
-}
-
-.product-card h3 {
-    padding: 18px 18px 5px;
-}
-
-.product-card p {
-    padding: 0 18px 18px;
-    color: var(--grey);
-}
-
-.product-card .btn {
-    margin: 0 18px 20px;
-}
-
-
-/* 9. PROJECT GALLERY */
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.project-card {
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-}
-
-.project-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background: var(--light);
-}
-
-.project-card h3 {
-    padding: 18px 18px 5px;
-}
-
-.project-card p {
-    padding: 0 18px 20px;
-    color: var(--grey);
-}
-
-
-/* 10. CALL TO ACTION */
-
-.cta-section {
-    background: var(--navy);
-    color: var(--white);
-    text-align: center;
-}
-
-.cta-section h2 {
-    color: var(--white);
-}
-
-.cta-section p {
-    max-width: 650px;
-    margin: 0 auto 25px;
-    color: #dce8f3;
-}
-
-
-/* 11. ABOUT PAGE */
-
-.about-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 45px;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 12px;
-    min-height: 300px;
-    object-fit: cover;
-}
-
-.about-content p {
-    color: var(--grey);
-    margin-bottom: 15px;
-}
-
-.mission-vision {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.mission-card,
-.vision-card {
-    padding: 30px;
-    background: var(--light);
-    border-radius: 12px;
-    border-left: 4px solid var(--blue);
-}
-
-
-/* 12. CONTACT PAGE */
-
-.contact-section {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 45px;
-    align-items: start;
-}
-
-.contact-info {
-    background: var(--navy);
-    padding: 35px;
-    border-radius: 12px;
-    color: var(--white);
-}
-
-.contact-info h2,
-.contact-info h3 {
-    color: var(--white);
-}
-
-.contact-item {
-    margin-top: 25px;
-}
-
-.contact-item a {
-    color: #dce8f3;
-    overflow-wrap: anywhere;
-}
-
-.contact-item a:hover {
-    color: var(--yellow);
-}
-
-
-/* 13. FORMS */
-
-form {
-    width: 100%;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--navy);
-    font-weight: 700;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--white);
-    outline: none;
-    color: var(--dark);
-    transition: 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(8,120,209,0.1);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 130px;
-}
-
-form button {
-    border: none;
-}
-
-
-/* 14. QUOTE PAGE */
-
-.quote-section {
-    max-width: 950px;
-    margin: auto;
-}
-
-.quote-intro {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.quote-intro p {
-    color: var(--grey);
-}
-
-
-/* 15. 404 ERROR PAGE */
-
-.error-page {
-    min-height: 480px;
-    padding: 90px 7%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.error-page h1 {
-    font-size: 100px;
-    color: var(--blue);
-    line-height: 1.2;
-}
-
-.error-page h2 {
-    margin-top: 15px;
-}
-
-.error-page p {
-    color: var(--grey);
-    margin-bottom: 25px;
-}
-
-
-/* 16. FOOTER */
-
-.footer {
-    background: var(--navy);
-    color: var(--white);
-    padding: 55px 7% 25px;
-    text-align: center;
-}
-
-.footer .logo {
-    color: var(--white);
-    margin-bottom: 12px;
-}
-
-.footer .logo span {
-    color: var(--yellow);
-}
-
-.footer p {
-    color: #c4d2e0;
-    margin: 12px 0;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin: 25px 0;
-}
-
-.footer-links a {
-    color: var(--white);
-    font-size: 14px;
-}
-
-.footer-links a:hover {
-    color: var(--yellow);
-}
-
-
-/* 17. RESPONSIVE TABLET DESIGN */
-
-@media (max-width: 1000px) {
-
-    .header {
-        flex-wrap: wrap;
-    }
-
-    .header nav,
-    .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-
-/* 18. RESPONSIVE MOBILE DESIGN */
-
-@media (max-width: 650px) {
-
-    section {
-        padding: 55px 6%;
-    }
-
-    .header {
-        padding: 16px 6%;
-        align-items: flex-start;
+    .hero-buttons {
+        align-items: stretch;
         flex-direction: column;
     }
 
-    .header nav,
-    .nav-links {
+    .hero-buttons .btn {
         width: 100%;
-        gap: 12px 18px;
-    }
-
-    .header nav a,
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .hero {
-        min-height: 480px;
-        padding: 75px 6%;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 15px;
     }
 
     .page-hero {
-        padding: 65px 6%;
+        min-height: 220px;
+        padding: 60px 6%;
+    }
+
+    .page-hero h1 {
+        font-size: 34px;
+    }
+
+    .section-heading h2,
+    .about-section h2 {
+        font-size: 28px;
     }
 
     .product-grid,
-    .project-grid,
-    .about-section,
-    .contact-section,
-    .mission-vision {
+    .project-grid {
         grid-template-columns: 1fr;
+        gap: 22px;
     }
 
     .product-card img,
@@ -614,28 +33,83 @@ form button {
         height: 230px;
     }
 
-    .contact-info {
-        padding: 25px;
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
-    .footer-links {
-        gap: 15px;
+    .about-image img {
+        height: 280px;
     }
 
-    .error-page h1 {
-        font-size: 75px;
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 60px 6%;
+    }
+
+    .contact-form-container,
+    .quote-section form {
+        padding: 23px;
+    }
+
+    .quote-section {
+        padding: 60px 6%;
+    }
+
+    .quote-intro h2 {
+        font-size: 27px;
+    }
+
+    .footer {
+        padding: 50px 6% 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cta-section {
+        padding: 60px 6%;
+    }
+
+    .error-content h2 {
+        font-size: 25px;
+    }
+
+    .btn {
+        max-width: 100%;
     }
 
 }
 
 
-/* 19. ACCESSIBILITY */
+/* 18. ACCESSIBILITY AND FINAL DETAILS */
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
+:focus-visible {
     outline: 3px solid var(--yellow);
     outline-offset: 3px;
+}
+
+::selection {
+    background: var(--blue);
+    color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }

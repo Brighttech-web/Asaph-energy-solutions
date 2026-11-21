@@ -1,215 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Explore solar energy installation projects from Asaph Energy Solutions for homes and businesses.">
 
-    <meta name="description" content="Explore solar energy installation projects by Asaph Energy Solutions, including residential, commercial and ground-mounted solar installations.">
+<meta name="theme-color" content="#071b35">
 
-    <meta name="theme-color" content="#071d3b">
+<title>Our Projects | Asaph Energy Solutions</title>
 
-    <title>Our Projects | Asaph Energy Solutions</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        color: #222;
+        line-height: 1.6;
+    }
 
-<body>
+    header {
+        background: #071b35;
+        color: white;
+        padding: 20px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container">
+    .logo {
+        font-size: 23px;
+        font-weight: bold;
+        color: white;
+    }
 
-        <a href="index.html" class="logo">
-            ASAPH <span>ENERGY</span>
-        </a>
+    .logo span {
+        color: #1684e8;
+    }
 
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="projects.html" class="active">Projects</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="quote.html" class="nav-quote">Get a Quote</a>
-        </nav>
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 14px;
+    }
 
-    </div>
-</header>
+    nav a:hover {
+        color: #1684e8;
+    }
 
+    .hero {
+        background: #eaf2fb;
+        text-align: center;
+        padding: 75px 20px;
+    }
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-    <div class="container">
+    .hero h1 {
+        font-size: 38px;
+        color: #071b35;
+        margin-bottom: 15px;
+    }
 
-        <h1>Our Projects</h1>
+    .hero p {
+        max-width: 650px;
+        margin: auto;
+        color: #555;
+    }
 
-        <p>
-            Delivering reliable and sustainable solar energy
-            solutions for homes, businesses and communities.
-        </p>
+    .projects {
+        padding: 65px 7%;
+    }
 
-    </div>
-</section>
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
+    .section-title h2 {
+        color: #071b35;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
 
-<!-- PROJECT INTRODUCTION -->
-<section class="section">
-    <div class="container">
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 28px;
+    }
 
-        <div class="section-heading">
+    .project-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        transition: 0.3s;
+    }
 
-            <span class="subtitle">OUR WORK</span>
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
 
-            <h2>Powering Places With Solar Energy</h2>
+    .project-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+    }
 
+    .project-info {
+        padding: 22px;
+    }
+
+    .project-info h3 {
+        color: #071b35;
+        margin-bottom: 10px;
+    }
+
+    .project-info p {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .status {
+        display: inline-block;
+        background: #e5f4e9;
+        color: #18813b;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .ongoing {
+        background: #071b35;
+        color: white;
+        padding: 65px 7%;
+    }
+
+    .ongoing h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .ongoing p {
+        text-align: center;
+        max-width: 650px;
+        margin: auto;
+        color: #d0d9e5;
+    }
+
+    .cta {
+        text-align: center;
+        padding: 65px 20px;
+        background: #eaf2fb;
+    }
+
+    .cta h2 {
+        color: #071b35;
+        margin-bottom: 15px;
+    }
+
+    .cta a {
+        display: inline-block;
+        background: #1684e8;
+        color: white;
+        text-decoration: none;
+        padding: 13px 28px;
+        border-radius: 6px;
+        margin-top: 20px;
+    }
+
+    footer {
+        background: #061426;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+        font-size: 13px;
+    }
+
+    @media(max-width: 600px) {
+        header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            margin: 0 7px;
+        }
+
+        .hero h1 {
+            font-size: 29px;
+        }
+    }
+</style>
+
+</head><body><header>
+    <div class="logo">ASAPH <span>ENERGY</span></div><nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+</header><section class="hero">
+    <h1>Our Projects</h1>
+    <p>
+        Discover how Asaph Energy Solutions delivers reliable,
+        efficient and sustainable solar energy solutions
+        for homes and businesses.
+    </p>
+</section><section class="projects"><div class="section-title">
+    <h2>Our Solar Installations</h2>
+    <p>Explore our range of solar energy projects.</p>
+</div>
+
+<div class="project-grid">
+
+    <div class="project-card">
+        <img src="images/solar-home.png" alt="Residential solar installation">
+
+        <div class="project-info">
+            <span class="status">Residential</span>
+            <h3>Home Solar Installation</h3>
             <p>
-                At Asaph Energy Solutions, we provide solar energy
-                solutions designed to meet different energy needs.
-                Explore the types of installations we deliver.
+                Reliable solar energy solutions designed
+                to provide homes with dependable electricity.
             </p>
-
         </div>
-
-
-        <!-- PROJECT CARDS -->
-        <div class="projects-grid">
-
-
-            <!-- COMMERCIAL SOLAR -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <img
-                        src="images/solar-commercial-building.png"
-                        alt="Commercial solar installation on a business building"
-                    >
-                </div>
-
-                <div class="project-content">
-
-                    <span class="project-category">
-                        Commercial Solar
-                    </span>
-
-                    <h3>Business Solar Installation</h3>
-
-                    <p>
-                        Solar energy solutions designed for offices,
-                        commercial buildings and businesses looking
-                        for reliable and efficient electricity.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- GROUND SOLAR -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <img
-                        src="images/solar-ground-installation.png"
-                        alt="Ground-mounted solar panel installation"
-                    >
-                </div>
-
-                <div class="project-content">
-
-                    <span class="project-category">
-                        Ground Solar
-                    </span>
-
-                    <h3>Ground-Mounted Solar Installation</h3>
-
-                    <p>
-                        Solar panel installations designed for
-                        open spaces, larger energy requirements
-                        and scalable renewable energy systems.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- HOME SOLAR -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <img
-                        src="images/solar-home.png"
-                        alt="Residential home solar panel installation"
-                    >
-                </div>
-
-                <div class="project-content">
-
-                    <span class="project-category">
-                        Residential Solar
-                    </span>
-
-                    <h3>Home Solar Installation</h3>
-
-                    <p>
-                        Reliable solar energy systems designed
-                        to help households enjoy dependable
-                        electricity for their everyday needs.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
     </div>
-</section>
 
+    <div class="project-card">
+        <img src="images/solar-commercial-building.png" alt="Commercial building solar installation">
 
-<!-- WHY CHOOSE US -->
-<section class="section why-projects">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="subtitle">WHY CHOOSE US</span>
-
-            <h2>Our Commitment to Quality</h2>
-
+        <div class="project-info">
+            <span class="status">Commercial</span>
+            <h3>Commercial Solar Project</h3>
             <p>
-                We focus on providing dependable solar energy
-                solutions that meet our customers' needs.
+                Solar energy installations designed
+                to support businesses and commercial buildings.
             </p>
-
         </div>
+    </div>
 
+    <div class="project-card">
+        <img src="images/solar-ground-installation.png" alt="Ground-mounted solar installation">
 
-        <div class="features-grid">
+        <div class="project-info">
+            <span class="status">Solar Farm</span>
+            <h3>Ground Solar Installation</h3>
+            <p>
+                Ground-mounted solar systems designed
+                for efficient renewable energy generation.
+            </p>
+        </div>
+    </div>
 
-            <div class="feature-card">
-                <h3>Reliable Solutions</h3>
+</div>
 
-                <p>
-                    Solar energy systems designed with
-                    reliability and performance in mind.
-                </p>
-            </div>
+</section><section class="ongoing">
+    <h2>Ongoing Projects</h2><p>
+    We are continuously working on solar energy projects
+    that help homes and businesses enjoy reliable,
+    affordable and sustainable electricity.
+</p>
 
+</section><section class="cta">
+    <h2>Looking for a Reliable Solar Solution?</h2><p>
+    Let Asaph Energy Solutions help you find
+    the right solar energy solution.
+</p>
 
-            <div class="feature-card">
-                <h3>Quality Products</h3>
+<a href="contact.html">Contact Us</a>
 
-                <p>
-                    We focus on quality solar components
-                    for effective energy solutions.
-                </p>
-            </div>
-
-
-            <div class="feature-card">
-                <h3>Customer Satisfaction</h3>
-
-                <p>
-                    We work towards providing
+</section><footer>
+    <p>&copy; 2026 Asaph Energy Solutions. All Rights Reserved.</p>
+</footer></body>
+</html>
